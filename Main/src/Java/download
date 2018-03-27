@@ -1,0 +1,29 @@
+import java.io.*;  
+import javax.servlet.*;  
+import javax.servlet.http.*;  
+public class download extends HttpServlet {  
+  
+    public void doGet(HttpServletRequest request,HttpServletResponse response)  
+             throws IOException  
+    {  
+    response.setContentType("application/pdf");  
+    ServletOutputStream out;  
+    out = response.getOutputStream();
+    String path="e://";
+    String filename=request.getParameter("topic");
+    FileInputStream fin = new FileInputStream(path + filename);  
+      
+    BufferedInputStream bin = new BufferedInputStream(fin);  
+    BufferedOutputStream bout = new BufferedOutputStream(out);  
+    int ch =0; ;  
+    while((ch=bin.read())!=-1)  
+    {  
+    bout.write(ch);  
+    }  
+      
+    bin.close();  
+    fin.close();  
+    bout.close();  
+    out.close();  
+    }  
+}  
