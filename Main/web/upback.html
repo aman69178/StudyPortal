@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+    
+    #faculty{
+        font-family: "Trebuchet MS","Arial","Helvetica","san-serif";
+        border-collapse: collapse;
+        width:100%;
+    }
+    #faculty td,#faculty th{
+        border:1px solid activecaption;
+        padding: 8px;
+    }
+    #faculty tr:nth-child(even){background-color: #f2f2f2;}  
+    
+    #faculty th{
+        background-color: steelblue;
+        color:white;
+        text-align: left;
+    }
+    
+    #faculty tr:hover{
+        background-color: #ddd;
+    }
+</style>
+    </head>
+    <body>
+        <table id="faculty"><thead>
+                <tr><th>courseid</th><th>topic</th><th>Format</th></tr>
+</thead>
+<tbody>
+            <tr>
+                <td>
+                    34
+                </td>
+                <td>Java.pdf</td>
+                <td>Pdf</td>
+            </tr>
+            
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>Python.pdf</td>
+                <td>Pdf</td>
+            </tr>
+            
+</tbody>
+        </table>
+        <form action="./download" method="get">
+            Name:<input type="text" name="topic"/>
+            <input type="submit" value="submit"/>
+        </form>
+    </body>
+</html>
